@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos generales */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -15,7 +14,6 @@
             background-color: #eaeaea;
         }
 
-        /* Estilo para el encabezado principal */
         .main-header {
             background-color: #333;
             padding: 10px 20px;
@@ -34,15 +32,14 @@
             height: 40px;
         }
 
-        /* Modificación del botón de regreso */
         .button-container {
             position: absolute;
-            top: 64px; /* Ajusta la posición para que esté debajo del logo */
+            top: 64px;
             left: 22px;
         }
 
         .top-left-button {
-            width: 30px; /* Tamaño pequeño */
+            width: 30px;
             height: 30px;
             object-fit: contain;
         }
@@ -83,7 +80,6 @@
             gap: 5px;
         }
 
-        /* Estilo para la barra de navegación */
         .category-nav {
             background-color: #f8f8f8;
             padding: 10px 0;
@@ -101,7 +97,7 @@
 
         .category-nav a {
             text-decoration: none;
-            color: #000; /* Color negro para las categorías */
+            color: #000;
             font-weight: 500;
         }
 
@@ -109,7 +105,6 @@
             color: #007BFF;
         }
 
-        /* Estilos para el contenido principal */
         footer {
             background-color: #333;
             color: white;
@@ -131,7 +126,6 @@
 
         .categories-container {
             display: grid;
-            grid-template-rows: auto auto;
             gap: 30px;
             padding: 20px;
             background-color: #ffffff;
@@ -139,20 +133,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
             max-width: 1200px;
-        }
-
-        .row-1 {
-            display: grid;
-            grid-template-columns: repeat(4, 250px);
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .row-2 {
-            display: grid;
-            grid-template-columns: repeat(2, 250px);
-            gap: 20px;
-            justify-content: center;
         }
 
         .category-button {
@@ -198,6 +178,24 @@
         .category-button:hover img {
             transform: scale(1.05);
         }
+
+        @media (min-width: 992px) {
+            .categories-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (min-width: 768px) and (max-width: 991px) {
+            .categories-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 767px) {
+            .categories-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -231,45 +229,41 @@
         <section id="categorias">
             <h2>Marcas de Smartphones</h2>
             <div class="categories-container">
-                <div class="row-1">
-                    <div class="category-button" onclick="document.getElementById('apple').scrollIntoView();">
-                        <div class="image-container">
-                            <img src="images/apple.jpeg" alt="Apple">
-                        </div>
-                        <h3>Apple</h3>
+                <div class="category-button" onclick="document.getElementById('apple').scrollIntoView();">
+                    <div class="image-container">
+                        <img src="images/apple.jpeg" alt="Apple">
                     </div>
-                    <div class="category-button" onclick="document.getElementById('samsung').scrollIntoView();">
-                        <div class="image-container">
-                            <img src="images/samsung.jpeg" alt="Samsung">
-                        </div>
-                        <h3>Samsung</h3>
-                    </div>
-                    <div class="category-button" onclick="document.getElementById('xiaomi').scrollIntoView();">
-                        <div class="image-container">
-                            <img src="images/xiaomi.jpeg" alt="Xiaomi">
-                        </div>
-                        <h3>Xiaomi</h3>
-                    </div>
-                    <div class="category-button" onclick="document.getElementById('huawei').scrollIntoView();">
-                        <div class="image-container">
-                            <img src="images/huawei.jpeg" alt="Huawei">
-                        </div>
-                        <h3>Huawei</h3>
-                    </div>
+                    <h3>Apple</h3>
                 </div>
-                <div class="row-2">
-                    <div class="category-button" onclick="document.getElementById('oneplus').scrollIntoView();">
-                        <div class="image-container">
-                            <img src="images/oneplus.jpeg" alt="OnePlus">
-                        </div>
-                        <h3>OnePlus</h3>
+                <div class="category-button" onclick="document.getElementById('samsung').scrollIntoView();">
+                    <div class="image-container">
+                        <img src="images/samsung.jpeg" alt="Samsung">
                     </div>
-                    <div class="category-button" onclick="document.getElementById('google').scrollIntoView();">
-                        <div class="image-container">
-                            <img src="images/google.jpeg" alt="Google Pixel">
-                        </div>
-                        <h3>Google Pixel</h3>
+                    <h3>Samsung</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('xiaomi').scrollIntoView();">
+                    <div class="image-container">
+                        <img src="images/xiaomi.jpeg" alt="Xiaomi">
                     </div>
+                    <h3>Xiaomi</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('huawei').scrollIntoView();">
+                    <div class="image-container">
+                        <img src="images/huawei.jpeg" alt="Huawei">
+                    </div>
+                    <h3>Huawei</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('oneplus').scrollIntoView();">
+                    <div class="image-container">
+                        <img src="images/oneplus.jpeg" alt="OnePlus">
+                    </div>
+                    <h3>OnePlus</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('google').scrollIntoView();">
+                    <div class="image-container">
+                        <img src="images/google.jpeg" alt="Google Pixel">
+                    </div>
+                    <h3>Google Pixel</h3>
                 </div>
             </div>
         </section>
