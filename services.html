@@ -18,6 +18,7 @@
             color: white;
             padding: 10px 20px;
             display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se ajusten en móviles */
             align-items: center;
             justify-content: space-between;
         }
@@ -35,6 +36,7 @@
             flex: 1;
             display: flex;
             align-items: center;
+            margin: 10px 0; /* Espacio entre el contenedor de búsqueda y otros elementos en móviles */
         }
 
         .main-nav {
@@ -160,6 +162,30 @@
             text-align: center;
             padding: 10px 0;
             margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .search-container {
+                flex-direction: column; /* Apila la barra de búsqueda en móviles */
+                align-items: stretch;
+            }
+
+            .main-nav {
+                flex-direction: column; /* Muestra los enlaces de navegación en columna */
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .user-options {
+                flex-direction: column; /* Muestra las opciones de usuario en columna */
+            }
+
+            .button-container {
+                position: relative; /* Cambia la posición para móviles */
+                top: 0;
+                left: 0;
+                margin: 10px 0; /* Añade margen en móviles */
+            }
         }
     </style>
 </head>
