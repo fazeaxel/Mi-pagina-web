@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio - ElectroTech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaea;
+        }
+
+        /* Nuevo estilo para el encabezado principal */
+        .main-header {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        /* Modificación del botón de regreso */
+        .back-button {
+            margin-left: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .back-button img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-bar button {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .user-options {
+            display: flex;
+            gap: 20px;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 64px;  /* Debajo del logo */
+            left: 23px;
+        }
+
+        .top-left-button {
+            width: 30px;  /* Tamaño ajustado a 30 píxeles de ancho */
+            height: 30px; /* Tamaño ajustado a 30 píxeles de alto */
+            object-fit: contain;  /* Mantener las proporciones de la imagen */
+        }
+        .user-options a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Estilo para la barra de navegación */
+        .category-nav {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .category-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .category-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .category-nav a:hover {
+            color: #007BFF;
+        }
+
+        /* Estilos para el contenido principal */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.8em;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 30px 0;
+            font-weight: 700;
+            color: #444;
+        }
+
+        .categories-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .category-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-width: 240px;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-button img {
+            width: 100%;
+            border-radius: 5px;
+            max-height: 150px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .category-button h3 {
+            font-size: 1.2em;
+            margin: 10px 0 0 0;
+            color: #333;
+        }
+
+        .category-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-button:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="ElectroTech Logo">
+        </div>
+        <div class="button-container">
+            <a href="index.html"><img src="images/boton.webp" alt="Botón Regresar" class="top-left-button"></a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-options">
+            <a href="login.html"><i class="fas fa-user"></i> Iniciar sesión</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Carrito (0)</a>
+        </div>
+    </header>
+    
+    
+    <nav class="category-nav">
+        <ul>
+            <li><a href="tv-video.html">TV y Video</a></li>
+            <li><a href="audio.html">Audio</a></li>
+            <li><a href="smartphone.html">Smartphones</a></li>
+            <li><a href="componentes.html">Componentes PC</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="categorias">
+            <h2>Categorías de Audio</h2>
+            <div class="categories-container">
+                <!-- El resto del contenido de las categorías permanece igual -->
+                <div class="category-button" onclick="document.getElementById('audifonos').scrollIntoView();">
+                    <img src="images/audifonos.jpg" alt="Audífonos">
+                    <h3>Audífonos</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('bocinas').scrollIntoView();">
+                    <img src="images/bocinas.jpg" alt="Bocinas">
+                    <h3>Bocinas</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('bafles').scrollIntoView();">
+                    <img src="images/bafles.jpg" alt="Bafles con Amplificador">
+                    <h3>Bafles con Amplificador</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('microfonos').scrollIntoView();">
+                    <img src="images/microfonos.jpg" alt="Micrófonos">
+                    <h3>Micrófonos</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('luces').scrollIntoView();">
+                    <img src="images/luces.jpg" alt="Luces para Fiesta">
+                    <h3>Luces para Fiesta</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('receptores').scrollIntoView();">
+                    <img src="images/receptores.jpg" alt="Receptores y Transmisores">
+                    <h3>Receptores y Transmisores de Audio Inalámbrico</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('transmisores-fm').scrollIntoView();">
+                    <img src="images/transmisores-fm.jpg" alt="Transmisores FM">
+                    <h3>Transmisores FM</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('cables-audio').scrollIntoView();">
+                    <img src="images/cables-audio.jpg" alt="Cables de Audio">
+                    <h3>Cables de Audio</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('grabadoras').scrollIntoView();">
+                    <img src="images/grabadoras.jpg" alt="Grabadoras de Voz">
+                    <h3>Grabadoras de Voz</h3>
+                </div>
+                <div class="category-button" onclick="document.getElementById('megafonos').scrollIntoView();">
+                    <img src="images/megafonos.jpg" alt="Megáfonos">
+                    <h3>Megáfonos</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ElectroTech. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

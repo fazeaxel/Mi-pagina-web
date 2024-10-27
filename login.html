@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - ElectroTech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .container h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #e44d26;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            background-color: #d44120;
+        }
+
+        .google-login {
+            display: block;
+            text-align: center;
+            background-color: #4285f4;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+
+        .google-login:hover {
+            background-color: #357ae8;
+        }
+
+        #toggleForm {
+            margin-top: 10px;
+        }
+
+        #toggleForm a {
+            color: #e44d26;
+            text-decoration: none;
+        }
+
+        #toggleForm a:hover {
+            text-decoration: underline;
+        }
+
+        /* Botón de regreso en la parte superior izquierda */
+        .button-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .button-container img.top-left-button {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <a href="index.html"><img src="images/boton.webp" alt="Botón Regresar" class="top-left-button"></a>
+    </div>
+
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Iniciar Sesión</button>
+            </div>
+            <a href="#" class="google-login">Iniciar sesión con Google</a>
+        </form>
+
+        <form id="registerForm" style="display: none;">
+            <div class="form-group">
+                <label for="newEmail">Correo Electrónico:</label>
+                <input type="email" id="newEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="newPassword">Contraseña:</label>
+                <input type="password" id="newPassword" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Registrarse</button>
+            </div>
+        </form>
+
+        <p id="toggleForm">¿No tienes cuenta? <a href="#" onclick="toggleForms()">Regístrate aquí</a></p>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const registerForm = document.getElementById("registerForm");
+        const toggleForm = document.getElementById("toggleForm");
+
+        function toggleForms() {
+            if (registerForm.style.display === "none") {
+                registerForm.style.display = "block";
+                loginForm.style.display = "none";
+                toggleForm.innerHTML = "¿Ya tienes cuenta? <a href='#' onclick='toggleForms()'>Inicia sesión aquí</a>";
+            } else {
+                registerForm.style.display = "none";
+                loginForm.style.display = "block";
+                toggleForm.innerHTML = "¿No tienes cuenta? <a href='#' onclick='toggleForms()'>Regístrate aquí</a>";
+            }
+        }
+    </script>
+</body>
+</html>

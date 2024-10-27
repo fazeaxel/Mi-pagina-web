@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElectroTech - Tu Tienda de Electrónica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Espacio entre logo y el resto */
+        }
+
+        .logo {
+            flex: 0 0 auto;
+            width: 200px;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 10px; /* Espacio entre botones */
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .main-nav a:hover {
+            border: 1px solid white;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            flex-grow: 1; /* Permite que la barra de búsqueda crezca */
+            justify-content: flex-start; /* Alinear a la izquierda */
+            margin: 0 50px; /* Espacio a los lados */
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: stretch;
+            width: 100%;
+            max-width: 600px; /* Aumentar la longitud de la barra de búsqueda */
+            height: 40px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 6px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+            border-right: none;
+            font-size: 14px;
+        }
+
+        .search-bar button {
+            padding: 6px 12px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar button:hover {
+            background-color: #f5f5f5;
+        }
+
+        .user-options {
+            display: flex;
+            align-items: center; /* Alinea verticalmente */
+            gap: 15px; /* Espacio entre íconos */
+        }
+
+        .user-options a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .category-nav {
+            background-color: #f2f2f2;
+            padding: 10px 0;
+        }
+
+        .category-nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .category-nav li {
+            margin: 5px 15px;
+        }
+
+        .category-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        .product-card p {
+            color: #e44d26;
+            font-weight: bold;
+        }
+
+        .product-card .category {
+            font-size: 0.8em;
+            color: #666;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="ElectroTech Logo">
+        </div>
+        <div class="main-nav">
+            <a href="services.html">Servicios</a>
+            <a href="about.html">Acerca de Nosotros</a>
+            <a href="contact.html">Contacto</a>
+            <a href="blog.html">Blog</a>
+        </div>
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar productos...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="user-options">
+            <a href="login.html"><i class="fas fa-user"></i> Iniciar sesión</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Carrito (0)</a>
+        </div>
+    </header>
+
+    <nav class="category-nav">
+        <ul>
+            <li><a href="tv-video.html">TV y Video</a></li>
+            <li><a href="audio.html">Audio</a></li>
+            <li><a href="smartphone.html">Smartphones</a></li>
+            <li><a href="componentes.html">Componentes PC</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Productos Destacados</h1>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="images/lg_oled_tv.jpeg" alt="LG OLED TV">
+                <h3>LG OLED TV 55"</h3>
+                <p class="category">TV y Video</p>
+                <p>$1,299.99</p>
+            </div>
+            <div class="product-card">
+                <img src="images/iphone_13.jpeg" alt="iPhone 13">
+                <h3>iPhone 13</h3>
+                <p class="category">Smartphones</p>
+                <p>$799.99</p>
+            </div>
+            <div class="product-card">
+                <img src="images/macbook_air.jpeg" alt="MacBook Air M1">
+                <h3>MacBook Air M1</h3>
+                <p class="category">Computadoras</p>
+                <p>$999.99</p>
+            </div>
+            <div class="product-card">
+                <img src="images/bose_headphones.jpg" alt="Bose QC35 II">
+                <h3>Bose QC35 II Auriculares</h3>
+                <p class="category">Audio</p>
+                <p>$299.99</p>
+            </div>
+            <div class="product-card">
+                <img src="images/canon_camera.jpeg" alt="Canon EOS Rebel">
+                <h3>Canon EOS Rebel T7</h3>
+                <p class="category">Cámaras</p>
+                <p>$499.99</p>
+            </div>
+            <div class="product-card">
+                <img src="images/ps5.jpg" alt="PlayStation 5">
+                <h3>PlayStation 5</h3>
+                <p class="category">Videojuegos</p>
+                <p>$499.99</p>
+            </div>
+            <div class="product-card">
+                <img src="images/ipad_pro.jpeg" alt="iPad Pro 12.9">
+                <h3>iPad Pro 12.9"</h3>
+                <p class="category">Tablets</p>
+                <p>$1,099.99</p>
+            </div>
+            <div class="product-card">
+                <img src="images/echo_dot.jpg" alt="Amazon Echo Dot">
+                <h3>Amazon Echo Dot</h3>
+                <p class="category">Smart Home</p>
+                <p>$49.99</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>©copy; 2024 ElectroTech. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

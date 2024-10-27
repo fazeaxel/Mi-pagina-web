@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartphones - ElectroTech</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaea;
+        }
+
+        /* Estilo para el encabezado principal */
+        .main-header {
+            background-color: #333;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        /* Modificación del botón de regreso */
+        .back-button {
+            margin-left: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .back-button img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .search-bar button {
+            padding: 8px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-left: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .user-options {
+            display: flex;
+            gap: 20px;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 64px;
+            left: 23px;
+        }
+
+        .top-left-button {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+        }
+
+        .user-options a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Estilo para la barra de navegación */
+        .category-nav {
+            background-color: #f8f8f8;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .category-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .category-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .category-nav a:hover {
+            color: #007BFF;
+        }
+
+        /* Estilos para el contenido principal */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.8em;
+        }
+
+        h2 {
+            text-align: center;
+            margin: 30px 0;
+            font-weight: 700;
+            color: #444;
+        }
+
+        .categories-container {
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 30px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .row-1 {
+            display: grid;
+            grid-template-columns: repeat(4, 250px);
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .row-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 250px);
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .category-button {
+            background-color: #f8f9fa;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 280px; /* Altura fija para uniformidad */
+        }
+
+        .image-container {
+            height: 200px; /* Altura fija para las imágenes */
+            margin-bottom: 10px;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .category-button img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Cambiado a contain para mostrar la imagen completa */
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .category-button h3 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .category-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-button:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="ElectroTech Logo">
+        </div>
+        <div class="button-container">
+            <a href="index.html"><img src="images/boton.webp" alt="Botón Regresar" class="top-left-button"></a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar productos...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="user-options">
+            <a href="#"><i class="fas fa-user"></i> Iniciar sesión</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Carrito (0)</a>
+        </div>
+    </header>
+    
+    <nav class="category-nav">
+        <ul>
+            <li><a href="tv-video.html">TV y Video</a></li>
+            <li><a href="audio.html">Audio</a></li>
+            <li><a href="smartphone.html">Smartphones</a></li>
+            <li><a href="componentes.html">Componentes PC</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="categorias">
+            <h2>Marcas de Smartphones</h2>
+            <div class="categories-container">
+                <div class="row-1">
+                    <div class="category-button" onclick="document.getElementById('apple').scrollIntoView();">
+                        <div class="image-container">
+                            <img src="images/apple.jpeg" alt="Apple">
+                        </div>
+                        <h3>Apple</h3>
+                    </div>
+                    <div class="category-button" onclick="document.getElementById('samsung').scrollIntoView();">
+                        <div class="image-container">
+                            <img src="images/samsung.jpeg" alt="Samsung">
+                        </div>
+                        <h3>Samsung</h3>
+                    </div>
+                    <div class="category-button" onclick="document.getElementById('xiaomi').scrollIntoView();">
+                        <div class="image-container">
+                            <img src="images/xiaomi.jpeg" alt="Xiaomi">
+                        </div>
+                        <h3>Xiaomi</h3>
+                    </div>
+                    <div class="category-button" onclick="document.getElementById('huawei').scrollIntoView();">
+                        <div class="image-container">
+                            <img src="images/huawei.jpeg" alt="Huawei">
+                        </div>
+                        <h3>Huawei</h3>
+                    </div>
+                </div>
+                <div class="row-2">
+                    <div class="category-button" onclick="document.getElementById('oneplus').scrollIntoView();">
+                        <div class="image-container">
+                            <img src="images/oneplus.jpeg" alt="OnePlus">
+                        </div>
+                        <h3>OnePlus</h3>
+                    </div>
+                    <div class="category-button" onclick="document.getElementById('google').scrollIntoView();">
+                        <div class="image-container">
+                            <img src="images/google.jpeg" alt="Google Pixel">
+                        </div>
+                        <h3>Google Pixel</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>©copy; 2024 ElectroTech. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
