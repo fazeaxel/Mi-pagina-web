@@ -165,32 +165,36 @@
 
         @media (max-width: 768px) {
             .button-container {
-                position: absolute;
-                top: 60px; /* Ajustado para estar justo debajo del logo */
-                left: 20px;
+                position: relative; /* Cambiado a relative para mantener posición adecuada */
+                margin-top: 10px; /* Añadido margen superior para espacio */
+                text-align: center; /* Centrar el botón */
+            }
+
+            .main-nav {
+                justify-content: flex-end; /* Botones alineados a la derecha */
+                margin-right: 0; /* Eliminar margen derecho */
+                width: 100%; /* Hacer que ocupe todo el ancho */
+                flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
             }
 
             .search-bar {
                 width: 100%;
+                margin: 10px 0; /* Espaciado vertical */
+                justify-content: center; /* Centrar la barra de búsqueda */
+            }
+
+            .user-options {
+                justify-content: center; /* Centrar opciones de usuario */
+                margin: 10px 0; /* Espaciado vertical */
             }
 
             .category-nav ul {
-                flex-direction: row; /* Alinear en horizontal en móviles */
+                flex-direction: row; /* Cambiar a fila en móvil */
                 justify-content: center; /* Centrar categorías */
             }
 
             .category-nav li {
-                margin: 5px; /* Espaciado uniforme en horizontal */
-            }
-
-            header {
-                flex-direction: column; /* Colocar elementos en columna en móviles */
-                align-items: flex-start; /* Alinear a la izquierda */
-            }
-
-            .main-nav {
-                margin-right: 0; /* Sin margen a la derecha */
-                flex-wrap: wrap; /* Permitir el salto a la siguiente línea */
+                margin: 5px; /* Espaciado horizontal para categorías */
             }
         }
     </style>
