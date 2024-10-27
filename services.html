@@ -166,7 +166,7 @@
         @media (max-width: 768px) {
             .button-container {
                 position: absolute;
-                top: 10px;
+                top: 60px; /* Ajustado para estar justo debajo del logo */
                 left: 20px;
             }
 
@@ -175,11 +175,22 @@
             }
 
             .category-nav ul {
-                flex-direction: column; /* Cambiar a columna en móvil */
+                flex-direction: row; /* Alinear en horizontal en móviles */
+                justify-content: center; /* Centrar categorías */
             }
 
             .category-nav li {
-                margin: 5px 0; /* Espaciado vertical en móvil */
+                margin: 5px; /* Espaciado uniforme en horizontal */
+            }
+
+            header {
+                flex-direction: column; /* Colocar elementos en columna en móviles */
+                align-items: flex-start; /* Alinear a la izquierda */
+            }
+
+            .main-nav {
+                margin-right: 0; /* Sin margen a la derecha */
+                flex-wrap: wrap; /* Permitir el salto a la siguiente línea */
             }
         }
     </style>
